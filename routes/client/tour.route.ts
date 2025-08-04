@@ -1,17 +1,8 @@
-import  { Router, Request, Response } from "express";
-import Tour from "../../models/tour.model";
+import  { Router } from "express";
 const router : Router = Router();
 
+import * as controller from "../../controllers/client/tour.controller";
 
-router.get("/", async (req: Request, res: Response) => {
+router.get("/", controller.index);
 
-  const tours = await Tour.findAll({
-    raw: true
-  });
-
-  res.render("client/pages/tours/index", {
-    tours: tours
-  });
-});
-
-export const tourRoutes: Router = router
+export const tourRoutes: Router = router;
