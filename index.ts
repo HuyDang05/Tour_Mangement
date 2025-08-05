@@ -1,6 +1,7 @@
 import express, { Express } from "express";
 import dotenv from "dotenv"; 
 import clientRoutes from "./routes/client/index.route";
+import moment from "moment";
 
 dotenv.config();
 
@@ -16,6 +17,8 @@ app.set("view engine", "pug");
 // Client Routes
 clientRoutes(app);
 
+// App Local Variable
+app.locals.moment = moment;
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
