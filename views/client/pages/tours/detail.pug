@@ -8,7 +8,7 @@ block main
     class="alert alert-success alert-hidden"
     alert-add-cart-success
   ) Đã thêm tour vào giỏ hàng! <span close-alert>x</span>
-  
+
   .tour-detail
     .container.my-3 
       .row 
@@ -19,8 +19,8 @@ block main
                 div(class="swiper-wrapper")
                   each image in tourDetail.images 
                     div(class="swiper-slide")
-                    .inner-image
-                      img(src=image)
+                      .inner-image
+                        img(src=image)
                 div(class="swiper-button-next")
                 div(class="swiper-button-prev")
               
@@ -28,8 +28,8 @@ block main
                 div(class="swiper-wrapper")
                   each image in tourDetail.images 
                     div(class="swiper-slide")
-                    .inner-image
-                      img(src=image)
+                      .inner-image
+                        img(src=image)
 
         .col-6 
           .inner-title #{tourDetail.title}
@@ -38,7 +38,8 @@ block main
             <i class="fa-solid fa-barcode>"></i> Mã tour: #{tourDetail.code}
 
           .inner-time-start 
-            <i class="fa-solid fa-calendar-days>"></i> Lịch khởi hành: +formatDateTime(tourDetail.timeStart)
+            <i class="fa-solid fa-calendar-days>"></i> Lịch khởi hành: 
+            +formatDateTime(tourDetail.timeStart)
 
           .inner-stock
             <i class="fa-solid fa-person-walking-luggage>"></i> Còn lại: #{tourDetail.stock} chỗ
